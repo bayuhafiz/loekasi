@@ -1,0 +1,38 @@
+[
+  '{{repeat(1)}}',
+  {
+    agent: {
+        name: '{{firstName()}} {{surname()}}',
+        email: '{{email()}}',
+        phone: '+62 {{phone()}}',
+        company: '{{company()}}'
+    },
+    name: '{{company()}} {{random("Building", "Tower")}}',
+    description: '{{lorem(1, "paragraphs")}}',
+    image: 'http://lorempixel.com/600/400/',
+    location: 
+      {
+      lat: '{{floating(-90.000001, 90)}}',
+      long: '{{floating(-180.000001, 180)}}',
+      area: '{{random("Sudirman", "Kuningan", "Kelapa Gading")}}',
+      address1: '{{integer(100, 999)}} {{street()}}',
+      address2: '{{street()}}',
+      postal: '{{integer(100, 10000)}}',
+      city: 'Jakarta',
+      country: 'Indonesia'
+      },
+    listing: [
+      '{{repeat(2, 5)}}',
+      {
+        listingid: '{{objectId()}}',
+        size: '{{integer(50, 1000)}}',
+        price: '{{integer(5, 20)}}',
+        dateposted: '{{date(new Date(2015, 0, 1), new Date())}}',
+        listingImage: ['http://lorempixel.com/600/400/','http://lorempixel.com/600/400/','http://lorempixel.com/600/400/','http://lorempixel.com/600/400/'],
+        details:'{{lorem(3, "sentences")}}',
+        type: '{{random("Retail", "Office")}}',
+        leaseTerm: '{{integer(1, 3)}}'
+      }
+     ]
+  }
+]

@@ -7,268 +7,33 @@
     <title>
         <%= title %>
     </title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/customstyle.css">
-</head>
-
-<body class="top-navigation">
-    <div id="wrapper">
-        <div id="page-wrapper" class="gray-bg">
-            <div class="row border-bottom white-bg">
-                <nav class="navbar navbar-static-top" role="navigation">
-                    <div class="navbar-header">
-                        <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-                            <i class="fa fa-reorder"></i>
-                        </button>
-                        <a href="/" class="navbar-brand">LOEKASI</a>
-                    </div>
-                    <div class="navbar-collapse collapse" id="navbar">
-                        <ul class="nav navbar-top-links navbar-right">
-                            <li class="dropdown">
-                                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                                    Menu &nbsp;
-                                    <i class="fa fa-angle-down"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-messages">
-                                    <li>
-                                        <a href="">
-                                         Menu 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                        Menu 2
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                        Menu 3
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="row wrapper border-bottom white-bg page-heading detail-header">
-                <div class="col-lg-10 animated fadeInLeft">
-                    <h1 class="building-title"><%= details.name %></h1>
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li class="active">
-                            <strong><%= details.name %></strong>
-                        </li>
-                    </ol>
-                </div>
-                <div class="col-lg-2">
-                </div>
-            </div>
-            <div class="wrapper wrapper-content">
-                <div class="row animated fadeInRight">
-                    <div class="col-md-4">
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-title">
-                                <p>BUILDING DETAIL</p>
-                            </div>
-                            <div>
-                                <div class="ibox-content no-padding border-left-right">
-                                    <div class="carousel slide" id="carousel1">
-                                        <div class="carousel-inner">
-                                            <div class="item active">
-                                                <img alt="image" class="img-responsive" src="<%= details.image %>">
-                                            </div>
-                                        </div>
-                                        <a data-slide="prev" href="#carousel1" class="left carousel-control">
-                                            <span class="icon-prev"></span>
-                                        </a>
-                                        <a data-slide="next" href="#carousel1" class="right carousel-control">
-                                            <span class="icon-next"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="ibox-content profile-content">
-                                    <h5 class="build-info">
-                                        BUILDING LOCATION
-                                    </h5>
-                                    <p>
-                                        <i class="fa fa-map-marker"></i>&nbsp;&nbsp;
-                                        <span><%= details.location.address1 %>, <%= details.location.address2 %>, <%= details.location.city %></span>
-                                    </p>
-                                    <hr>
-                                    <h5 class="build-info">
-                                        BUILDING DESCRIPTION
-                                    </h5>
-                                    <p class="build-desc">
-                                        <%= details.description %>
-                                    </p>
-                                    <hr>
-                                    <h5 class="build-info">
-                                        BUILDING DATA
-                                    </h5>
-                                    <ul class="bulding-data">
-                                        <li><strong>Year Built</strong>
-                                            <p>1966</p>
-                                        </li>
-                                        <li><strong>Height</strong>
-                                            <p>630 feet</p>
-                                        </li>
-                                        <li><strong>Floors</strong>
-                                            <p>45</p>
-                                        </li>
-                                        <li><strong>Owner/Leasing Manager</strong>
-                                            <p>Colliers International</p>
-                                        </li>
-                                        <li><strong>Architect</strong>
-                                            <p>Alfred Easton Poor</p>
-                                        </li>
-                                        <li><strong>Building Class</strong>
-                                            <p>A</p>
-                                        </li>
-                                    </ul>
-                                    <div class="user-button">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#contactUs" style="font-size: 17px;"><i class="fa fa-phone"></i> Contact Us</button>
-                                            </div>
-                                            <div class="modal inmodal fade" id="contactUs" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                            <h4 class="modal-title">Modal title</h4>
-                                                            <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                                            <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="ibox float-e-margins">
-                                    <div class="ibox-title">
-                                        <p id="spaces-rent-title">40 spaces for rent</p>
-                                    </div>
-                                    <div class="ibox-content">
-                                        <p>
-                                            <ul class="spaces-rent">
-                                                <li><a class="linkSize" href="#link1">8,310 sqft</a></li>
-                                                <li><a class="linkSize" href="#link2">17,937 sqft</a></li>
-                                                <li><a class="linkSize" href="#link3">19,421 sqft</a> </li>
-                                                <li><a class="linkSize" href="#link4">41,336 sqft</a> </li>
-                                            </ul>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <% var data = details.listing
-                        ; %>
-                        <% for(var i=0; i < data.length; i++) { %>
-                        <div class="row" id="link1">
-                            <div class="col-lg-12">
-                                <div class="ibox float-e-margins ibox-per-space">
-                                    <div class="ibox-title office-spaces">
-                                        <div class="listing-space">
-                                            <p>8,310 sqft</p>
-                                            <span class="units">Office Space</span>
-                                        </div>
-                                    </div>
-                                    <div class="ibox-content office-spaces-content">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <p><%= data.details %></p>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="lightBoxGallery">
-                                                    <a href="img/gallery/1.jpg" title="Image from Unsplash" data-gallery=""><img src="img/gallery/1s.jpg"></a>
-                                                    <a href="img/gallery/2.jpg" title="Image from Unsplash" data-gallery=""><img src="img/gallery/2s.jpg"></a>
-                                                    <a href="img/gallery/3.jpg" title="Image from Unsplash" data-gallery=""><img src="img/gallery/3s.jpg"></a>
-                                                    <a href="img/gallery/1.jpg" title="Image from Unsplash" data-gallery=""><img src="img/gallery/1s.jpg"></a>
-                                                    <div id="blueimp-gallery" class="blueimp-gallery">
-                                                        <div class="slides"></div>
-                                                        <h3 class="title"></h3>
-                                                        <a class="prev">‹</a>
-                                                        <a class="next">›</a>
-                                                        <a class="close">×</a>
-                                                        <a class="play-pause"></a>
-                                                        <ol class="indicator"></ol>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-price">
-                                        <p class="pricing-text">$24,930
-                                            <br><span class="month">monthly</span></p>
-                                        <span><button type="button" class="btn btn-primary btn-sm btn-block" style="display:inline-block">Contact Broker</button></span>
-                                    </div>
-                                    <div class="ibox-title office-spaces-type">
-                                        <p><strong>Property Type </strong> <span class="units-type">Office</span>
-                                            <p>
-                                                <p><strong>Lease Term</strong> <span class="units-type">10-15 Years</span>
-                                                    <p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <% }; %>
-
-                    </div>
-                </div>
-            </div>
-            <div class="footer fixed">
-                <div>
-                    <strong>Copyright</strong> Example Company &copy; 2014-2015
-                </div>
-            </div>
-        </div>
-        <div class="ibox-content m-b-sm border-bottom maps-content">
-            <div id="map-canvas"></div>
-        </div>
-    </div>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/customstyle.css">
     <!-- Mainly scripts -->
-    <script src="js/jquery-2.1.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../js/jquery-2.1.1.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
+    <script src="../js/inspinia.js"></script>
+    <script src="../js/plugins/pace/pace.min.js"></script>
     <!-- blueimp gallery -->
-    <script src="js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
+    <script src="../js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
     <!-- Flot -->
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="../js/plugins/flot/jquery.flot.js"></script>
+    <script src="../js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="../js/plugins/flot/jquery.flot.resize.js"></script>
     <!-- ChartJS-->
-    <script src="js/plugins/chartJs/Chart.min.js"></script>
+    <script src="../js/plugins/chartjs/Chart.min.js"></script>
     <!-- Peity -->
-    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../js/plugins/peity/jquery.peity.min.js"></script>
     <!-- Peity demo -->
-    <script src="js/demo/peity-demo.js"></script>
+    <script src="../js/demo/peity-demo.js"></script>
     <script>
     google.maps.event.addDomListener(window, 'load', init);
 
@@ -505,6 +270,256 @@
 
     });
     </script>
+</head>
+
+<body class="top-navigation">
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom white-bg">
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <div class="navbar-header">
+                        <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                            <i class="fa fa-reorder"></i>
+                        </button>
+                        <a href="/" class="navbar-brand">LOEKASI</a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="navbar">
+                        <ul class="nav navbar-top-links navbar-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                    Menu &nbsp;
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-messages">
+                                    <li>
+                                        <a href="">
+                                         Menu 1
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                        Menu 2
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                        Menu 3
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="row wrapper border-bottom white-bg page-heading detail-header">
+                <div class="col-lg-10 animated fadeInLeft">
+                    <h1 class="building-title"><%= details.name %></h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="active">
+                            <strong><%= details.name %></strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+                </div>
+            </div>
+            <div class="wrapper wrapper-content">
+                <div class="row animated fadeInRight">
+                    <div class="col-md-4">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <p>BUILDING DETAIL</p>
+                            </div>
+                            <div>
+                                <div class="ibox-content no-padding border-left-right">
+                                    <div class="carousel slide" id="carousel1">
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <img alt="image" class="img-responsive" src="<%= details.image %>">
+                                            </div>
+                                        </div>
+                                        <a data-slide="prev" href="#carousel1" class="left carousel-control">
+                                            <span class="icon-prev"></span>
+                                        </a>
+                                        <a data-slide="next" href="#carousel1" class="right carousel-control">
+                                            <span class="icon-next"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content profile-content">
+                                    <h5 class="build-info">
+                                        BUILDING LOCATION
+                                    </h5>
+                                    <p>
+                                        <i class="fa fa-map-marker"></i>&nbsp;&nbsp;
+                                        <span><%= details.location.address1 %>, <%= details.location.area %>, <%= details.location.city %></span>
+                                    </p>
+                                    <hr>
+                                    <h5 class="build-info">
+                                        BUILDING DESCRIPTION
+                                    </h5>
+                                    <p class="build-desc">
+                                        <%= details.description %>
+                                    </p>
+                                    <hr>
+                                    <h5 class="build-info">
+                                        BUILDING DATA
+                                    </h5>
+                                    <ul class="bulding-data">
+                                        <li><strong>Name </strong>
+                                            <p>
+                                                <%= details.agent.name %>
+                                            </p>
+                                        </li>
+                                        <li><strong>Phone Number </strong>
+                                            <p>
+                                                <%= details.agent.phone %>
+                                            </p>
+                                        </li>
+                                        <li><strong>Contact Email </strong>
+                                            <p>
+                                                <%= details.agent.email %>
+                                            </p>
+                                        </li>
+                                        <li><strong>Company Name</strong>
+                                            <p>
+                                                <%= details.agent.company %>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <div class="user-button">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#contactUs" style="font-size: 17px;"><i class="fa fa-phone"></i> Contact Us</button>
+                                            </div>
+                                            <div class="modal inmodal fade" id="contactUs" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                            <h4 class="modal-title">Modal title</h4>
+                                                            <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                                            <p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <p id="spaces-rent-title">
+                                        </p>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <p>
+                                            <ul class="spaces-rent" id="btn-list">
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ibox-container"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer fixed">
+                <div>
+                    <strong>Copyright</strong> Example Company &copy; 2014-2015
+                </div>
+            </div>
+        </div>
+        <div class="ibox-content m-b-sm border-bottom maps-content">
+            <div id="map-canvas"></div>
+        </div>
+    </div>
+
+    <script>
+                        $.getJSON('/get/listing/<%= details._id %>', {}, function(result) {
+                            var datas = result.listing, 
+                                arr = [],
+                                num = 0,
+                                ibox = '';
+                                li = '';
+                            $.each(datas, function(key, data){
+                                num++;
+                                li += '<li style="margin-right:5px;"><a class="linkSize" href="#' + data.listingid + '">' + data.size + ' sqm</a></li>';
+                                ibox += '<div class="row" id="' + data.listingid + '">' +
+                                        '<div class="col-lg-12">' +
+                                            '<div class="ibox float-e-margins ibox-per-space">' +
+                                                '<div class="ibox-title office-spaces">' +
+                                                    '<div class="listing-space">' +
+                                                        '<p>' + data.size + ' sqft</p>' +
+                                                        '<span class="units">' + data.type + ' Space</span>' +
+                                                    '</div>' +
+                                                '</div>' +
+                                                '<div class="ibox-content office-spaces-content">' +
+                                                    '<div class="row">' +
+                                                        '<div class="col-lg-8">' +
+                                                            '<p>' +
+                                                                data.details +
+                                                            '</p>' +
+                                                        '</div>' +
+                                                        '<div class="col-lg-4">' +
+                                                            '<div class="lightBoxGallery">' +
+                                                                '<a href="http://lorempixel.com/600/400/" title="Image from Unsplash" data-gallery=""><img src="http://lorempixel.com/100/103/"></a>' +
+                                                                '<a href="http://lorempixel.com/600/400/" title="Image from Unsplash" data-gallery=""><img src="http://lorempixel.com/100/103/"></a>' +
+                                                                '<a href="http://lorempixel.com/600/400/" title="Image from Unsplash" data-gallery=""><img src="http://lorempixel.com/100/103/"></a>' +
+                                                                '<a href="http://lorempixel.com/600/400/" title="Image from Unsplash" data-gallery=""><img src="http://lorempixel.com/100/103/"></a>' +
+                                                                '<div id="blueimp-gallery" class="blueimp-gallery">' +
+                                                                    '<div class="slides"></div>' +
+                                                                    '<h3 class="title"></h3>' +
+                                                                    '<a class="prev">‹</a>' +
+                                                                    '<a class="next">›</a>' +
+                                                                    '<a class="close">×</a>' +
+                                                                    '<a class="play-pause"></a>' +
+                                                                    '<ol class="indicator"></ol>' +
+                                                                '</div>' +
+                                                            '</div>' +
+                                                        '</div>' +
+                                                    '</div>' +
+                                                '</div>' +
+                                                '<div class="listing-price">' +
+                                                    '<p class="pricing-text">$' + data.price +
+                                                        '<br><span class="month">monthly</span></p>' +
+                                                    '<span><button type="button" class="btn btn-primary btn-sm btn-block" style="display:inline-block">Contact Broker</button></span>' +
+                                                '</div>' +
+                                                '<div class="ibox-title office-spaces-type">' +
+                                                    '<p><strong>Property Type </strong> <span class="units-type">' + data.type + '</span>' +
+                                                        '<p>' +
+                                                            '<p><strong>Lease Term</strong> <span class="units-type">' + data.leaseTerm + ' Years</span>' +
+                                                                '<p>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>' +
+                                    '</div>';
+                            });
+
+                            // print the result
+                            $('#spaces-rent-title').html(num + ' spaces for rent');
+                            $('#btn-list').html(li);
+                            $('#ibox-container').html(ibox);
+                        });
+                        </script>
 </body>
 
 </html>

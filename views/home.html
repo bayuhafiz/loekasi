@@ -19,6 +19,146 @@
         background: #fff
     }
     </style>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+    <!-- FooTable -->
+    <script src="js/plugins/footable/footable.all.min.js"></script>
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <!-- ChartJS-->
+    <script src="js/plugins/chartJs/Chart.min.js"></script>
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <!-- Peity demo -->
+    <script src="js/demo/peity-demo.js"></script>
+    <!-- Bower components -->
+    <script src="bower_components/mathjs/dist/math.min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.footable').footable();
+        $('.footable2').footable();
+
+        var d1 = [
+            [1262304000000, 6],
+            [1264982400000, 3057],
+            [1267401600000, 20434],
+            [1270080000000, 31982],
+            [1272672000000, 26602],
+            [1275350400000, 27826],
+            [1277942400000, 24302],
+            [1280620800000, 24237],
+            [1283299200000, 21004],
+            [1285891200000, 12144],
+            [1288569600000, 10577],
+            [1291161600000, 10295]
+        ];
+        var d2 = [
+            [1262304000000, 5],
+            [1264982400000, 200],
+            [1267401600000, 1605],
+            [1270080000000, 6129],
+            [1272672000000, 11643],
+            [1275350400000, 19055],
+            [1277942400000, 30062],
+            [1280620800000, 39197],
+            [1283299200000, 37000],
+            [1285891200000, 27000],
+            [1288569600000, 21000],
+            [1291161600000, 17000]
+        ];
+
+        var data1 = [{
+            label: "Data 1",
+            data: d1,
+            color: '#17a084'
+        }, {
+            label: "Data 2",
+            data: d2,
+            color: '#127e68'
+        }];
+        $.plot($("#flot-chart1"), data1, {
+            xaxis: {
+                tickDecimals: 0
+            },
+            series: {
+                lines: {
+                    show: true,
+                    fill: true,
+                    fillColor: {
+                        colors: [{
+                            opacity: 1
+                        }, {
+                            opacity: 1
+                        }]
+                    },
+                },
+                points: {
+                    width: 0.1,
+                    show: false
+                },
+            },
+            grid: {
+                show: false,
+                borderWidth: 0
+            },
+            legend: {
+                show: false,
+            }
+        });
+
+        var lineData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [{
+                label: "Example dataset",
+                fillColor: "rgba(220,220,220,0.5)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: [65, 59, 40, 51, 36, 25, 40]
+            }, {
+                label: "Example dataset",
+                fillColor: "rgba(26,179,148,0.5)",
+                strokeColor: "rgba(26,179,148,0.7)",
+                pointColor: "rgba(26,179,148,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(26,179,148,1)",
+                data: [48, 48, 60, 39, 56, 37, 30]
+            }]
+        };
+
+        var lineOptions = {
+            scaleShowGridLines: true,
+            scaleGridLineColor: "rgba(0,0,0,.05)",
+            scaleGridLineWidth: 1,
+            bezierCurve: true,
+            bezierCurveTension: 0.4,
+            pointDot: true,
+            pointDotRadius: 4,
+            pointDotStrokeWidth: 1,
+            pointHitDetectionRadius: 20,
+            datasetStroke: true,
+            datasetStrokeWidth: 2,
+            datasetFill: true,
+            responsive: true,
+        };
+
+
+        var ctx = document.getElementById("lineChart").getContext("2d");
+        var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
+    });
+    </script>
 </head>
 
 <body class="top-navigation">
@@ -203,7 +343,7 @@
                                                 <th>Name of Building </th>
                                                 <th>Posted At </th>
                                                 <th>Rate (psm/pm) </th>
-                                                <th>Sizes </th>
+                                                <th>Sizes (sqm)</th>
                                                 <th>Type </th>
                                             </tr>
                                         </thead>
@@ -215,26 +355,102 @@
                                                             <div class="img-box">
                                                                 <img src="<%= building.image %>">
                                                             </div>
-                                                            <a href="/<%= building._id %>">
+                                                            <a href="/p/<%= building._id %>">
                                                                 <div class="name">
                                                                     <%= building.name %>
                                                                         <div class="units">
-                                                                            <%= building.location.address1 %>
+                                                                            <%= building.location.address1 %>, <%= building.location.area %>, <%= building.location.city %>
                                                                         </div>
                                                                 </div>
                                                             </a>
                                                         </td>
-                                                        <td><%= building.location.area %>
-                                                            <div class="units"><%= building.location.city %></div>
+                                                        <td id="date-cell-<%= building._id %>">
+                                                            <script>
+                                                            var dates = [];
+                                                            $.getJSON('/get/date/<%= building._id %>', {}, function(datas) {
+                                                                $.each(datas, function(key, values){
+                                                                    $.each(values, function(key, value){
+                                                                        dates[key] = new Date(moment(value.dateposted).format('YYYY/MM//DD'));
+                                                                    });
+                                                                });
+                                                                // Get the newest date
+                                                                var maxDate = Math.max.apply(null, dates);
+                                                                // convert back to date object
+                                                                maxDate = new Date(maxDate);
+                                                                // print the result
+                                                                $('#date-cell-<%= building._id %>').html(moment(maxDate).format('LLL'))
+                                                            });
+                                                            </script>
                                                         </td>
-                                                        <td><%= building.rate %></td>
-                                                        <td><%= building.minsize %> - <%= building.maxsize %>
-                                                            <div class="units"><%= building.listing.length %> listings</div>
+                                                        <td id="rate-cell-<%= building._id %>">
+                                                            <script>
+                                                            var prices = [];
+                                                            var rate = '';
+                                                            $.getJSON('/get/price/<%= building._id %>', {}, function(datas) {
+                                                                $.each(datas, function(key, values){
+                                                                    $.each(values, function(key, value){
+                                                                        prices[key] = value.price;
+                                                                    });
+                                                                });
+                                                                // get te min & max of them...
+                                                                var min = Math.min.apply(Math,prices);
+                                                                var max = Math.max.apply(Math,prices);
+                                                                rate = '$' + min + ' - $' + max;
+
+                                                                // print the result
+                                                                $('#rate-cell-<%= building._id %>').html(rate)
+                                                            });
+                                                            </script>
                                                         </td>
-                                                        <td>/idk what's this/</td>
+                                                        <td id="size-cell-<%= building._id %>">
+                                                            <script>
+                                                            var sizes = [];
+                                                            var range = '';
+                                                            $.getJSON('/get/size/<%= building._id %>', {}, function(datas) {
+                                                                var num = 0;
+                                                                $.each(datas, function(key, values){
+                                                                    $.each(values, function(key, value){
+                                                                        sizes[key] = value.size;
+                                                                        num++;
+                                                                    });
+                                                                });
+                                                                // get te min & max of them...
+                                                                var min = Math.min.apply(Math,sizes);
+                                                                var max = Math.max.apply(Math,sizes);
+                                                                range = min + ' - ' + max;
+
+                                                                // print the result
+                                                                $('#size-cell-<%= building._id %>').html(range + '<div class="units">' + num + ' listings</div>')
+                                                            });
+                                                            </script>
+                                                        </td>
+                                                        <td id="type-cell-<%= building._id %>">
+                                                            <script>
+                                                            var types = [];
+                                                            $.getJSON('/get/type/<%= building._id %>', {}, function(datas) {
+                                                                $.each(datas, function(key, values){
+                                                                    $.each(values, function(key, value){
+                                                                        types[key] = value.type;
+                                                                    });
+                                                                });
+
+                                                                // remove duplicate contents
+                                                                var newArr = $.unique(types.sort()).sort();
+                                                                var result = "";
+                                                                for (var i = 0; i < newArr.length; i++) {
+                                                                  result += newArr[i] + " & ";
+                                                                }
+                                                                result = result.slice(0, -2) //remove last &and;
+
+                                                                // print the result
+                                                                $('#type-cell-<%= building._id %>').html(result)
+                                                            });
+                                                            </script>
+                                                            <div class="units">
+                                                        </td>
                                                     </tr>
-                                                <% }); %>
-                                            <% } %>
+                                                    <% }); %>
+                                                        <% } %>
                                         </tbody>
                                         <tfoot>
                                             <tr>
@@ -260,144 +476,6 @@
             </div>
         </div>
     </div>
-    <!-- Mainly scripts -->
-    <script src="js/jquery-2.1.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
-    <!-- FooTable -->
-    <script src="js/plugins/footable/footable.all.min.js"></script>
-    <!-- Flot -->
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
-    <!-- ChartJS-->
-    <script src="js/plugins/chartJs/Chart.min.js"></script>
-    <!-- Peity -->
-    <script src="js/plugins/peity/jquery.peity.min.js"></script>
-    <!-- Peity demo -->
-    <script src="js/demo/peity-demo.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('.footable').footable();
-        $('.footable2').footable();
-
-        var d1 = [
-            [1262304000000, 6],
-            [1264982400000, 3057],
-            [1267401600000, 20434],
-            [1270080000000, 31982],
-            [1272672000000, 26602],
-            [1275350400000, 27826],
-            [1277942400000, 24302],
-            [1280620800000, 24237],
-            [1283299200000, 21004],
-            [1285891200000, 12144],
-            [1288569600000, 10577],
-            [1291161600000, 10295]
-        ];
-        var d2 = [
-            [1262304000000, 5],
-            [1264982400000, 200],
-            [1267401600000, 1605],
-            [1270080000000, 6129],
-            [1272672000000, 11643],
-            [1275350400000, 19055],
-            [1277942400000, 30062],
-            [1280620800000, 39197],
-            [1283299200000, 37000],
-            [1285891200000, 27000],
-            [1288569600000, 21000],
-            [1291161600000, 17000]
-        ];
-
-        var data1 = [{
-            label: "Data 1",
-            data: d1,
-            color: '#17a084'
-        }, {
-            label: "Data 2",
-            data: d2,
-            color: '#127e68'
-        }];
-        $.plot($("#flot-chart1"), data1, {
-            xaxis: {
-                tickDecimals: 0
-            },
-            series: {
-                lines: {
-                    show: true,
-                    fill: true,
-                    fillColor: {
-                        colors: [{
-                            opacity: 1
-                        }, {
-                            opacity: 1
-                        }]
-                    },
-                },
-                points: {
-                    width: 0.1,
-                    show: false
-                },
-            },
-            grid: {
-                show: false,
-                borderWidth: 0
-            },
-            legend: {
-                show: false,
-            }
-        });
-
-        var lineData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [{
-                label: "Example dataset",
-                fillColor: "rgba(220,220,220,0.5)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [65, 59, 40, 51, 36, 25, 40]
-            }, {
-                label: "Example dataset",
-                fillColor: "rgba(26,179,148,0.5)",
-                strokeColor: "rgba(26,179,148,0.7)",
-                pointColor: "rgba(26,179,148,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(26,179,148,1)",
-                data: [48, 48, 60, 39, 56, 37, 30]
-            }]
-        };
-
-        var lineOptions = {
-            scaleShowGridLines: true,
-            scaleGridLineColor: "rgba(0,0,0,.05)",
-            scaleGridLineWidth: 1,
-            bezierCurve: true,
-            bezierCurveTension: 0.4,
-            pointDot: true,
-            pointDotRadius: 4,
-            pointDotStrokeWidth: 1,
-            pointHitDetectionRadius: 20,
-            datasetStroke: true,
-            datasetStrokeWidth: 2,
-            datasetFill: true,
-            responsive: true,
-        };
-
-
-        var ctx = document.getElementById("lineChart").getContext("2d");
-        var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
-
-    });
-    </script>
 </body>
 
 </html>
