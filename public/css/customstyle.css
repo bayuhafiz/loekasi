@@ -1,0 +1,314 @@
+#page-wrapper{
+	margin: 0!important;
+}
+
+.building-header{
+	margin: 90px 0;
+}
+
+.building-header h2{
+	border-bottom: 4px solid #fff!important;
+	padding-bottom: 10px
+}
+
+.building-header p{
+	color: #fff
+}
+
+.footable-toggle{
+	display: none!important;
+}
+
+.nav-logo{
+	width: 200px;
+	margin-top: 7px;
+}
+
+.nav-logo > img{
+	width: 100%;
+}
+.table > tbody > tr > td{
+	  padding: 0;
+	  padding-left: 8px;
+	 position: relative;
+  top: 6px;
+}
+
+.table>thead:first-child>tr:first-child>th{
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.units{
+  font-weight: normal;
+  display: block;
+  font-size: 0.9em;
+  color: #a4a4a4;
+}
+
+.office-spaces-content{
+	padding-left:50px;
+	padding-right:50px;
+	padding-top: 30px;
+}
+
+.office-spaces p{
+	padding-right: 7px;
+	font-size: 20px;
+}
+
+.office-spaces span{
+	font-size: 1.1em;
+}
+
+.office-spaces p, 
+.office-spaces span{
+	display: inline-block;
+}
+
+.table > tfoot > tr > td{
+	padding-top: 35px;
+}
+
+.ibox-content br{
+	display: none;
+}
+
+.navbar-left{
+	margin-left: 15px;
+}
+.ibox-content-filter{
+	padding-bottom: 35px;
+}
+
+.ibox-filter{
+	margin-bottom: 0;
+}
+
+#map-canvas {
+    width: 100%;
+    height: 401px;
+ }
+
+ .navbar-top-links .dropdown-menu li{
+  text-align: center;
+ }
+
+ .navbar-top-links .dropdown-messages{
+ 	width: 150px;
+ }
+
+.ibox-content-filter .navbar-top-links li a{
+ 	padding: 0!important;
+ 	min-height: 0;
+ }
+
+ .ibox .open > .dropdown-menu{
+ 	left: 0;
+ 	margin-left: 0;
+ }
+
+ .img-box{
+ 	width: 50px;
+ 	display: inline-block;
+ 	margin-right: 15px;
+ }
+
+
+ .img-box img{
+ 	width: 100%;
+
+ }
+
+ .name{
+ 	display: inline-block;
+ 	position: relative;
+  top: 6px;
+ }
+
+ .container-customize{
+ 	width: 1227px;
+ }
+
+
+.bg-heading{
+	  background: url(https://static.pexels.com/photos/1380/black-and-white-city-skyline-buildings-large.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-heading h2{
+color: #fff;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top-navigation .wrapper.wrapper-content{
+	padding-top: 10px;
+}
+ul.spaces-rent, ul.bulding-data{
+	margin: 0;
+	padding: 0
+}
+ul.filter-menu{
+	margin: 0;
+	float: left;
+  	padding-left: 65px;
+}
+.filter-menu li, .spaces-rent li, .bulding-data li{
+	display: inline-block;
+}
+
+.bulding-data li{
+	width: 40%;
+	height: 60px;
+}
+
+.spaces-rent li{
+	padding: 3px;
+	border:1px solid #222;
+	border-radius: 5px;
+	
+}
+
+.spaces-rent li:hover{
+	background: #222;
+	cursor: pointer;
+}
+.spaces-rent li:hover a{
+	background: #222;
+	color: #fff
+}
+
+.spaces-rent li a{
+	color: #222
+}
+p#spaces-rent-title{
+	font-size: 20px;
+}
+
+.lightBoxGallery{
+	margin-bottom: 10px;
+}
+
+.lightBoxGallery img{
+	padding-bottom: 3px;
+}
+
+.building-title{
+	font-weight: 500;
+}
+
+.build-info{
+	opacity: 0.4;
+	font-weight: normal;
+	color: #000
+}
+.build-desc{
+	line-height: 1.6;
+}
+
+.listing-price{
+	position: absolute;
+	  right: 2em;
+	  top: 1em;
+	  margin: 0;
+	  padding: 0;
+	  border: none;
+}
+
+.listing-price p{
+	font-size: 18px;
+	color: #ED5565;
+	  margin-right: 0.5em;
+}
+.listing-price p, .listing-price span{
+	display: inline-block;
+	vertical-align: middle;
+}
+.listing-price span{
+	position: relative;
+	top:-8px;
+}
+.listing-price span button{
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 15px;
+}
+
+.listing-price .month{
+	font-size: 15px;
+	opacity: 0.6;
+	color: #000
+}
+
+.maps-content{
+	padding: 0;
+	position: relative;
+  bottom: 28px;
+}
+
+.office-spaces-type{
+	background: #F6F7F7;
+	  border-width: 1px;
+}
+.office-spaces-type p{
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.units-type{
+	font-size: 12px;
+	opacity: 0.7;
+	padding-left: 5px;
+}
+
+.ibox-per-space{
+	box-shadow: 0 2px 2px rgba(81,88,91,0.4);
+}
+
+.detail-header{
+	margin-top: 10px;
+}
+
+.top-navigation .navbar-brand,.btn-primary{
+	background: #222;
+	border-color: #222
+}
+.btn-primary:hover,.btn-primary:focus{
+	background: #454444;
+	border-color: #454444
+}
+
+#sticky.stick {
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    border-radius: 0 0 0.5em 0.5em;
+}
+@media (max-width: 769px){
+	.ibox-content-filter{
+		padding-bottom: 20px;
+	}
+	ul.filter-menu{
+		float: none;
+		padding: 0;
+	}
+
+	.listing-price{
+		position: relative;
+		right: auto;
+		text-align: center;
+		top:auto;
+		padding-top: 4px;
+		border-top:1px solid #E7EAEC;
+		background: #fff
+	}
+
+	.listing-price span{
+		display: block;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
