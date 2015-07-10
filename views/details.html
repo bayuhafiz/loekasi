@@ -463,6 +463,8 @@
                             $.each(datas, function(key, data){
                                 num++;
                                 li += '<li style="margin-right:5px;"><a class="linkSize" href="#' + data.listingid + '">' + data.size + ' sqm</a></li>';
+                                // count monthly cost
+                                var cost = data.size * data.price;
                                 ibox += '<div class="row" id="' + data.listingid + '">' +
                                         '<div class="col-lg-12">' +
                                             '<div class="ibox float-e-margins ibox-per-space">' +
@@ -499,7 +501,7 @@
                                                     '</div>' +
                                                 '</div>' +
                                                 '<div class="listing-price">' +
-                                                    '<p class="pricing-text">$' + data.price +
+                                                    '<p class="pricing-text">$' + cost +
                                                         '<br><span class="month">monthly</span></p>' +
                                                     '<span><button type="button" class="btn btn-primary btn-sm btn-block" style="display:inline-block">Contact Broker</button></span>' +
                                                 '</div>' +
